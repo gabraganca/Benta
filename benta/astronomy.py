@@ -6,7 +6,8 @@ from uncertainties.core import AffineScalarFunc
 
 def helio2galactic(gal_lon, gal_lat, helio_dist,
                    sun_dist=(8.33, 0.35)):
-    """Converts heliocentric distance to Galactocentric Distance.
+    """Converts heliocentric distance to Galactocentric Distance projected in
+    the Galactic plane.
 
     If an error is given for the heliocentric distance, it also returns the
     error of the Galactocentric distance.
@@ -31,9 +32,9 @@ def helio2galactic(gal_lon, gal_lat, helio_dist,
     -------
 
     float, tuple
-        Object Galactocentric distance. If the error on the heliocentric
-        distance was also given, it also returns the error on the
-        Galactocentric distance.
+        Object Galactocentric distance projected in the Galactic plane. If the
+        error on the heliocentric distance was also given, it also returns the
+        error on the Galactocentric distance.
     """
     if isinstance(helio_dist, tuple):
         # object distance plus error
